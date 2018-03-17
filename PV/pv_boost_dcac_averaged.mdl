@@ -1,0 +1,5226 @@
+Model {
+  Name			  "pv_boost_dcac_averaged"
+  Version		  6.5
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.422"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "windows-1252"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Thu Jan 03 09:08:53 2008"
+  Creator		  "Mama"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "Mama"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Tue Feb 19 21:11:21 2008"
+  ModelVersionFormat	  "1.%<AutoIncrement:422>"
+  ConfigurationManager	  "None"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.2.0"
+      Array {
+	Type			"Handle"
+	Dimension		7
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.2.0"
+	  StartTime		  "0.0"
+	  StopTime		  "1/60"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "0.1e-3"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  RateTranMode		  "Deterministic"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.2.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    5
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "InitFltsAndDblsToZero"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.2.0"
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  ParameterPooling	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.2.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "none"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "none"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StrictBusMsg		  "Warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.2.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.2.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "IncludeHyperlinkInReport"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.2.0"
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  off
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Array {
+		Type			"Cell"
+		Dimension		16
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.2.0"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      PrefixModelToSubsysFcnNames on
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Array {
+		Type			"Cell"
+		Dimension		13
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.2.0"
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      SimulationMode	      "normal"
+      CurrentDlgPage	      "Solver"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Constant
+    }
+    Block {
+      BlockType		      Display
+      Format		      "short"
+      Decimation	      "10"
+      Floating		      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Fcn
+      Expr		      "sin(u[1])"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParameterDataTypeMode   "Same as input"
+      ParameterDataType	      "sfix(16)"
+      ParameterScalingMode    "Best Precision: Matrix-wise"
+      ParameterScaling	      "2^0"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      InitialCondition
+      Value		      "1"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Integrator
+      ExternalReset	      "none"
+      InitialConditionSource  "internal"
+      InitialCondition	      "0"
+      LimitOutput	      off
+      UpperSaturationLimit    "inf"
+      LowerSaturationLimit    "-inf"
+      ShowSaturationPort      off
+      ShowStatePort	      off
+      AbsoluteTolerance	      "auto"
+      IgnoreLimit	      off
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      MinMax
+      Function		      "min"
+      Inputs		      "1"
+      InputSameDT	      on
+      OutDataTypeMode	      "Inherit via internal rule"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Saturate
+      UpperLimit	      "0.5"
+      LowerLimit	      "-0.5"
+      LinearizeAsGain	      on
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Scope
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Sin
+      SineType		      "Time based"
+      TimeSource	      "Use simulation time"
+      Amplitude		      "1"
+      Bias		      "0"
+      Frequency		      "1"
+      Phase		      "0"
+      Samples		      "10"
+      Offset		      "0"
+      SampleTime	      "-1"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Switch
+      Criteria		      "u2 >= Threshold"
+      Threshold		      "0"
+      InputSameDT	      on
+      OutDataTypeMode	      "Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Arial"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Arial"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "pv_boost_dcac_averaged"
+    Location		    [337, 200, 1277, 824]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "cyan"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Sum
+      Name		      "Add"
+      Ports		      [6, 1]
+      Position		      [225, 13, 255, 547]
+      Inputs		      "++++++"
+      InputSameDT	      off
+      OutDataTypeMode	      "Inherit via internal rule"
+      OutScaling	      "2^-10"
+      SaturateOnIntegerOverflow	off
+      Port {
+	PortNumber		1
+	Name			"Vpv"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Boost DC-DC"
+      Ports		      [3, 4]
+      Position		      [420, 79, 520, 226]
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskDescription	      " Averaged model of a boost (step-up) DC-DC conv"
+"erter with input current control. Model includes losses due to input port res"
+"istance and output-port switching-loss current."
+      MaskPromptString	      "Capacitance|Initial capacitor voltage|Input por"
+"t series resistance|Switching loss current"
+      MaskStyleString	      "edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on"
+      MaskCallbackString      "|||"
+      MaskEnableString	      "on,on,on,on"
+      MaskVisibilityString    "on,on,on,on"
+      MaskToolTipString	      "on,on,on,on"
+      MaskVarAliasString      ",,,"
+      MaskVariables	      "C=@1;Vo=@2;RL=@3;IQ=@4;"
+      MaskDisplay	      "text(0.5,0.9,'Boost','horizontalAlignment', 'ce"
+"nter');\ntext(0.5,0.8,'DC-DC','horizontalAlignment', 'center');\ntext(0.5,0.7"
+",'(averaged, C)','horizontalAlignment', 'center');\ntext(0.5,0.6,'current con"
+"trol','horizontalAlignment', 'center');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "normalized"
+      MaskValueString	      "200e-6|200|0.5|0.03"
+      MaskTabNameString	      ",,,"
+      Port {
+	PortNumber		1
+	Name			"Vout"
+	PropagatedSignals	"vc"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		2
+	Name			"Duty"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		3
+	Name			"efficiency"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      System {
+	Name			"Boost DC-DC"
+	Location		[295, 407, 1232, 841]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Vg"
+	  Position		  [15, 123, 45, 137]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Iout"
+	  Position		  [15, 28, 45, 42]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Iref"
+	  Position		  [15, 233, 45, 247]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "-1"
+	  Position		  [200, 19, 250, 51]
+	  Gain			  "-1"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "0<=D<=1"
+	  Position		  [200, 110, 230, 140]
+	  UpperLimit		  "1"
+	  LowerLimit		  "0"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "1/C"
+	  Position		  [590, 103, 655, 137]
+	  Gain			  "1/C"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Efficiency\ncalculation"
+	  Ports			  [4, 1]
+	  Position		  [825, 219, 860, 291]
+	  Inputs		  "**//"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator (C)"
+	  Ports			  [1, 1]
+	  Position		  [730, 105, 760, 135]
+	  InitialCondition	  "Vo"
+	  IgnoreLimit		  off
+	  Port {
+	    PortNumber		    1
+	    Name		    "vc"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Limiter"
+	  Position		  [420, 220, 450, 250]
+	  UpperLimit		  "inf"
+	  LowerLimit		  "0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Iout"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1]
+	  Position		  [145, 107, 175, 138]
+	  Inputs		  "/*"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "1-D"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product1"
+	  Ports			  [2, 1]
+	  Position		  [275, 217, 305, 248]
+	  Inputs		  "**"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product2"
+	  Ports			  [2, 1]
+	  Position		  [830, 337, 860, 368]
+	  Inputs		  "**"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "RL"
+	  Position		  [79, 160, 121, 200]
+	  Orientation		  "up"
+	  Gain			  "RL"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  Ports			  [2, 1]
+	  Position		  [525, 110, 545, 130]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "++|"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum2"
+	  Ports			  [2, 1]
+	  Position		  [90, 120, 110, 140]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum3"
+	  Ports			  [2, 1]
+	  Position		  [345, 225, 365, 245]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "-+|"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum4"
+	  Ports			  [2, 1]
+	  Position		  [240, 320, 260, 340]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "-+|"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Switching loss current"
+	  Position		  [300, 145, 330, 175]
+	  Value			  "IQ"
+	  VectorParams1D	  on
+	  SamplingMode		  "Sample based"
+	  OutDataTypeMode	  "Inherit from 'Constant value'"
+	  OutDataType		  "sfix(16)"
+	  ConRadixGroup		  "Use specified scaling"
+	  OutScaling		  "2^0"
+	  SampleTime		  "inf"
+	  FramePeriod		  "inf"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "constant"
+	  Position		  [175, 315, 205, 345]
+	  Value			  "1"
+	  VectorParams1D	  on
+	  SamplingMode		  "Sample based"
+	  OutDataTypeMode	  "Inherit from 'Constant value'"
+	  OutDataType		  "sfix(16)"
+	  ConRadixGroup		  "Use specified scaling"
+	  OutScaling		  "2^0"
+	  SampleTime		  "inf"
+	  FramePeriod		  "inf"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Vout"
+	  Position		  [885, 113, 915, 127]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "D"
+	  Position		  [325, 323, 355, 337]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "efficiency"
+	  Position		  [885, 248, 915, 262]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Pout"
+	  Position		  [880, 348, 910, 362]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  DstBlock		  "1/C"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "1/C"
+	  SrcPort		  1
+	  DstBlock		  "Integrator (C)"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "vc"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Integrator (C)"
+	  SrcPort		  1
+	  Points		  [40, 0]
+	  Branch {
+	    DstBlock		    "Vout"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -45; -685, 0; 0, 40]
+	    DstBlock		    "Product"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 105]
+	    Branch {
+	      DstBlock		      "Efficiency\ncalculation"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 120]
+	      DstBlock		      "Product2"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Iout"
+	  SrcPort		  1
+	  DstBlock		  "-1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "-1"
+	  SrcPort		  1
+	  Points		  [280, 0]
+	  DstBlock		  "Sum1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "RL"
+	  SrcPort		  1
+	  DstBlock		  "Sum2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Iref"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  Branch {
+	    Points		    [45, 0]
+	    Branch {
+	      DstBlock		      "RL"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "Product1"
+	      DstPort		      2
+	    }
+	  }
+	  Branch {
+	    Points		    [0, 45]
+	    DstBlock		    "Efficiency\ncalculation"
+	    DstPort		    4
+	  }
+	}
+	Line {
+	  SrcBlock		  "Vg"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    DstBlock		    "Sum2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 135]
+	    DstBlock		    "Efficiency\ncalculation"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum2"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Product1"
+	  SrcPort		  1
+	  DstBlock		  "Sum3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Switching loss current"
+	  SrcPort		  1
+	  Points		  [20, 0]
+	  DstBlock		  "Sum3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum3"
+	  SrcPort		  1
+	  DstBlock		  "Limiter"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Iout"
+	  SrcBlock		  "Limiter"
+	  SrcPort		  1
+	  Points		  [35, 0; 0, 0]
+	  Branch {
+	    Labels		    [1, 0]
+	    Points		    [0, -115]
+	    DstBlock		    "Sum1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 10; 285, 0]
+	    Branch {
+	      DstBlock		      "Efficiency\ncalculation"
+	      DstPort		      2
+	    }
+	    Branch {
+	      Points		      [0, 115]
+	      DstBlock		      "Product2"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Efficiency\ncalculation"
+	  SrcPort		  1
+	  DstBlock		  "efficiency"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "constant"
+	  SrcPort		  1
+	  DstBlock		  "Sum4"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum4"
+	  SrcPort		  1
+	  DstBlock		  "D"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product2"
+	  SrcPort		  1
+	  DstBlock		  "Pout"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "1-D"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "0<=D<=1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "0<=D<=1"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, 100]
+	  Branch {
+	    DstBlock		    "Product1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Sum4"
+	    DstPort		    1
+	  }
+	}
+	Annotation {
+	  Name			  "ECEN2060 Switched-mode Boost (step-up) DC-D"
+"C averaged converter model\nwith input current control and efficiency model"
+	  Position		  [449, 14]
+	  UseDisplayTextAsClickCallback	off
+	}
+	Annotation {
+	  Name			  "output voltage"
+	  Position		  [881, 99]
+	  UseDisplayTextAsClickCallback	off
+	}
+	Annotation {
+	  Name			  "inductor current"
+	  Position		  [877, 32]
+	  UseDisplayTextAsClickCallback	off
+	}
+	Annotation {
+	  Name			  "output current"
+	  Position		  [59, 15]
+	  UseDisplayTextAsClickCallback	off
+	}
+	Annotation {
+	  Name			  "input voltage"
+	  Position		  [55, 65]
+	  UseDisplayTextAsClickCallback	off
+	}
+	Annotation {
+	  Name			  "Iref"
+	  Position		  [33, 217]
+	  UseDisplayTextAsClickCallback	off
+	}
+	Annotation {
+	  Name			  "Capacitor"
+	  Position		  [709, 88]
+	  UseDisplayTextAsClickCallback	off
+	}
+      }
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Boost efficiency"
+      Ports		      [1]
+      Position		      [570, 240, 660, 270]
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Boost scope"
+      Ports		      [3]
+      Position		      [600, 105, 630, 165]
+      Floating		      off
+      Location		      [246, 465, 995, 935]
+      Open		      off
+      NumInputPorts	      "3"
+      ZoomMode		      "yonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
+      }
+      TimeRange		      "0.018"
+      YMin		      "180~0.4~0.963"
+      YMax		      "220~0.6000000000000001~0.967"
+      SaveName		      "ScopeData1"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Compute\nefficiency"
+      Ports		      [2, 1]
+      Position		      [735, 402, 765, 433]
+      Inputs		      "*/"
+      InputSameDT	      off
+      OutDataTypeMode	      "Inherit via internal rule"
+      OutScaling	      "2^-10"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "DC-AC\nscope"
+      Ports		      [5]
+      Position		      [885, 58, 925, 192]
+      NamePlacement	      "alternate"
+      Floating		      off
+      Location		      [482, 152, 1539, 932]
+      Open		      off
+      NumInputPorts	      "5"
+      ZoomMode		      "xonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
+	axes4			"%<SignalLabel>"
+	axes5			"%<SignalLabel>"
+      }
+      TimeRange		      "0.018"
+      YMin		      "-200~-10~0~0~0"
+      YMax		      "200~10~5~1~1000"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "DC-AC Efficiency"
+      Ports		      [1]
+      Position		      [795, 405, 885, 435]
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "DC-AC Inverter"
+      Ports		      [2, 6]
+      Position		      [690, 61, 795, 214]
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskDescription	      "Averaged model of a switched-mode DC-AC inverte"
+"r for single-phase grid-connected systems. Output current is in phase with th"
+"e AC line voltage and has the RMS value set by the input reference Iref. Cond"
+"uction losses are modeled by an output por series resistance. Switching losse"
+"s are modeled by an input port current Isw. "
+      MaskPromptString	      "AC line RMS voltage|AC line frequency|Output po"
+"rt series resistance|Switching loss current"
+      MaskStyleString	      "edit,edit,edit,edit"
+      MaskTunableValueString  "on,on,on,on"
+      MaskCallbackString      "|||"
+      MaskEnableString	      "on,on,on,on"
+      MaskVisibilityString    "on,on,on,on"
+      MaskToolTipString	      "on,on,on,on"
+      MaskVarAliasString      ",,,"
+      MaskVariables	      "Vrms=@1;f=@2;RL=@3;IQ=@4;"
+      MaskDisplay	      "text(0.5,0.75,'DC-AC','horizontalAlignment', 'c"
+"enter');\ntext(0.5,0.6,'inverter','horizontalAlignment', 'center');\ntext(0.5"
+",0.45,'(averaged)','horizontalAlignment', 'center');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "normalized"
+      MaskValueString	      "120|60|0.8|0.04"
+      MaskTabNameString	      ",,,"
+      Port {
+	PortNumber		1
+	Name			"vac"
+	PropagatedSignals	"vac"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		2
+	Name			"iac"
+	PropagatedSignals	"iref"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		3
+	Name			"iin"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		4
+	Name			"Duty"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		5
+	Name			"pin"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		6
+	Name			"pout"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      System {
+	Name			"DC-AC Inverter"
+	Location		[368, 532, 1252, 970]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Vdc"
+	  Position		  [20, 118, 50, 132]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Iref"
+	  Position		  [15, 248, 45, 262]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [620, 95, 650, 125]
+	  Value			  "IQ"
+	  VectorParams1D	  on
+	  SamplingMode		  "Sample based"
+	  OutDataTypeMode	  "Inherit from 'Constant value'"
+	  OutDataType		  "sfix(16)"
+	  ConRadixGroup		  "Use specified scaling"
+	  OutScaling		  "2^0"
+	  SampleTime		  "inf"
+	  FramePeriod		  "inf"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Divide"
+	  Ports			  [2, 1]
+	  Position		  [475, 77, 505, 108]
+	  Inputs		  "*/"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  OutScaling		  "2^-10"
+	  RndMeth		  "Floor"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "2D-1"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "Fcn"
+	  Position		  [605, 45, 665, 75]
+	  Expr			  "(u+1)/2"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1]
+	  Position		  [175, 232, 205, 263]
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "iref"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product1"
+	  Ports			  [2, 1]
+	  Position		  [630, 152, 660, 183]
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product2"
+	  Ports			  [2, 1]
+	  Position		  [745, 277, 775, 308]
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product3"
+	  Ports			  [2, 1]
+	  Position		  [760, 87, 790, 118]
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "RL"
+	  Position		  [270, 68, 335, 102]
+	  Gain			  "RL"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sin
+	  Name			  "Sine Wave"
+	  Ports			  [0, 1]
+	  Position		  [80, 15, 110, 45]
+	  SineType		  "Time based"
+	  Amplitude		  "1*sqrt(2)"
+	  Frequency		  "2*pi*f"
+	  SampleTime		  "0"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  Ports			  [2, 1]
+	  Position		  [360, 75, 380, 95]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "++|"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "vac+RLiac"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum2"
+	  Ports			  [2, 1]
+	  Position		  [685, 160, 705, 180]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "++|"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Vrms"
+	  Position		  [190, 13, 255, 47]
+	  Gain			  "Vrms"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "vac"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "vac"
+	  Position		  [820, 23, 850, 37]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "iac"
+	  Position		  [820, 243, 850, 257]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "iin"
+	  Position		  [820, 163, 850, 177]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "D"
+	  Position		  [820, 53, 850, 67]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "pin"
+	  Position		  [820, 288, 850, 302]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "pout"
+	  Position		  [820, 98, 850, 112]
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Sine Wave"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  Branch {
+	    DstBlock		    "Vrms"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 210]
+	    DstBlock		    "Product"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  Name			  "vac"
+	  Labels		  [0, 0; 1, 0]
+	  SrcBlock		  "Vrms"
+	  SrcPort		  1
+	  Points		  [110, 0]
+	  Branch {
+	    DstBlock		    "Sum1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [365, 0]
+	    Branch {
+	      DstBlock		      "vac"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 65]
+	      DstBlock		      "Product3"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  Name			  "iref"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  Branch {
+	    Points		    [0, -165]
+	    DstBlock		    "RL"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [320, 0]
+	    Branch {
+	      Points		      [0, -75]
+	      DstBlock		      "Product1"
+	      DstPort		      2
+	    }
+	    Branch {
+	      Points		      [190, 0]
+	      Branch {
+		DstBlock		"iac"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Product3"
+		DstPort			2
+	      }
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Iref"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "RL"
+	  SrcPort		  1
+	  DstBlock		  "Sum1"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "vac+RLiac"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  DstBlock		  "Divide"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Vdc"
+	  SrcPort		  1
+	  Points		  [395, 0]
+	  Branch {
+	    Points		    [0, -25]
+	    DstBlock		    "Divide"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 175]
+	    DstBlock		    "Product2"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  Name			  "2D-1"
+	  SrcBlock		  "Divide"
+	  SrcPort		  1
+	  Points		  [45, 0]
+	  Branch {
+	    Labels		    [1, 0]
+	    Points		    [0, 65]
+	    DstBlock		    "Product1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -35]
+	    DstBlock		    "Fcn"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Product1"
+	  SrcPort		  1
+	  DstBlock		  "Sum2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [40, 0]
+	  DstBlock		  "Sum2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum2"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    Points		    [0, 115]
+	    DstBlock		    "Product2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "iin"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Fcn"
+	  SrcPort		  1
+	  DstBlock		  "D"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product2"
+	  SrcPort		  1
+	  DstBlock		  "pin"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product3"
+	  SrcPort		  1
+	  DstBlock		  "pout"
+	  DstPort		  1
+	}
+	Annotation {
+	  Name			  "output AC current"
+	  Position		  [815, 224]
+	  UseDisplayTextAsClickCallback	off
+	}
+	Annotation {
+	  Name			  "Input DC voltage"
+	  Position		  [58, 162]
+	  UseDisplayTextAsClickCallback	off
+	}
+	Annotation {
+	  Name			  "RMS current reference"
+	  Position		  [75, 291]
+	  UseDisplayTextAsClickCallback	off
+	}
+	Annotation {
+	  Name			  "input current"
+	  Position		  [818, 145]
+	  UseDisplayTextAsClickCallback	off
+	}
+      }
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Insolation"
+      Position		      [15, 65, 45, 95]
+      BackgroundColor	      "yellow"
+      Value		      "1000"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "sfix(16)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^0"
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "Integrator(pin)"
+      Ports		      [1, 1]
+      Position		      [560, 460, 590, 490]
+      IgnoreLimit	      off
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "Integrator(pout)"
+      Ports		      [1, 1]
+      Position		      [560, 355, 590, 385]
+      IgnoreLimit	      off
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Iref"
+      Position		      [695, 240, 725, 270]
+      Orientation	      "left"
+      BackgroundColor	      "yellow"
+      Value		      "3.94"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "sfix(16)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^0"
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux"
+      Ports		      [2, 1]
+      Position		      [850, 161, 855, 214]
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+      Port {
+	PortNumber		1
+	Name			"pin, pout"
+	PropagatedSignals	"pin, pout"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "PV current"
+      Position		      [320, 190, 350, 220]
+      BackgroundColor	      "yellow"
+      Value		      "4.95"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "sfix(16)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^0"
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+      Port {
+	PortNumber		1
+	Name			"Ipv = Iref"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "PV1"
+      Ports		      [2, 2]
+      Position		      [95, 42, 205, 93]
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskDescription	      "PV module model based on module data-sheet para"
+"meters. This model has Ipv input, which is suitable for series connections. L"
+"imitations: no temperature dependance, static model"
+      MaskPromptString	      "Short-circuit current|Open-circuit voltage|Curr"
+"ent at Pmax|Voltage at Pmax|By-pass diode?"
+      MaskStyleString	      "edit,edit,edit,edit,checkbox"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskCallbackString      "||||"
+      MaskEnableString	      "on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskVarAliasString      ",,,,"
+      MaskVariables	      "Isc=@1;Voc=@2;Ir=@3;Vr=@4;Diode=@5;"
+      MaskInitialization      "% calculation of PV module parameters\n% limita"
+"tion: constant temperature\nNs = round(Voc/0.61); % default number of cells i"
+"n series\nVt = 26e-3; % thermal voltage\nG = Isc/1000; % irradiation to short"
+"-circuit current gain\nVmpc = Vr/Ns; % cell voltage at rated Pmax\nVocc = Voc"
+"/Ns; % cell open-circuit voltage\nRmpp = Vmpc/Ir; % cell load resistance at P"
+"max\n%\nRp = 100*Vocc/Isc; % initial value for Rp\nVdm = Vocc; % initial valu"
+"e for Vdm\n%\n% iterative solution for model parameters: Io, Rs, Rp\nfor i=1:"
+"10\n%\n Idm = Isc - Ir - Vdm/Rp; % pn-junction (diode) current at MPP\n Io = "
+"(Isc-Vocc/Rp)/(exp(Vocc/Vt)-1); % pn-junction reverse saturation current\n Vd"
+"m = Vt*log(Idm/Io+1); % pn-junction (diode) voltage at MPP\n Rs = (Vdm-Vmpc)/"
+"Ir; % cell series resistance\n Rd = (Rmpp - Rs)*Rp/(Rp-Rmpp+Rs); % diode incr"
+"emental resistance at MPP\n Idm = Vt/Rd; % diode current at MPP based on incr"
+"emental resistance\n Rp = Vdm/(Isc-Ir-Idm); % cell parallel resistance\n%\nen"
+"d\n%"
+      MaskDisplay	      "plot([0.3 0.4],[0.4 0.8]);\nplot([0.4 0.5],[0.4"
+" 0.8]);\nplot([0.5 0.6],[0.4 0.8]);\nplot([0.6 0.7],[0.4 0.8]);\nplot([0.3 0."
+"6],[0.4 0.4]);\nplot([0.325 0.625],[0.5 0.5]);\nplot([0.35 0.65],[0.6 0.6]);"
+"\nplot([0.375 0.675],[0.7 0.7]);\nplot([0.4 0.7],[0.8 0.8]);\ntext(0.5,0.9,'P"
+"V module (I)','horizontalAlignment', 'center');\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "normalized"
+      MaskValueString	      "5.45|22.2|4.95|17.2|on"
+      MaskTabNameString	      ",,,,"
+      System {
+	Name			"PV1"
+	Location		[164, 268, 1200, 729]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Ipv"
+	  Position		  [25, 168, 55, 182]
+	  IconDisplay		  "Port number"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Ipv"
+	    PropagatedSignals	    "Ipv = Iref"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Insolation"
+	  Position		  [25, 273, 55, 287]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "1/Rp"
+	  Position		  [445, 390, 490, 420]
+	  Orientation		  "left"
+	  Gain			  "1/Rp"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Vd/Rp"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Algebraic Constraint"
+	  Ports			  [1, 1]
+	  Position		  [410, 265, 490, 295]
+	  SourceBlock		  "simulink/Math\nOperations/Algebraic Constra"
+"int"
+	  SourceType		  "Algebraic Constraint"
+	  ShowPortLabels	  on
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  z0			  "0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Vd"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "By-pass diode"
+	  Position		  [420, 67, 550, 103]
+	  Expr			  "-Vt*log((u/Io)+1)"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [745, 190, 775, 220]
+	  Value			  "Diode"
+	  VectorParams1D	  on
+	  SamplingMode		  "Sample based"
+	  OutDataTypeMode	  "Inherit from 'Constant value'"
+	  OutDataType		  "sfix(16)"
+	  ConRadixGroup		  "Use specified scaling"
+	  OutScaling		  "2^0"
+	  SampleTime		  "inf"
+	  FramePeriod		  "inf"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Insolation to \ncurrent gain"
+	  Position		  [115, 264, 160, 296]
+	  Gain			  "G"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Iph"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  MinMax
+	  Name			  "MinMax"
+	  Ports			  [2, 1]
+	  Position		  [750, 77, 780, 108]
+	  Function		  "max"
+	  Inputs		  "2"
+	  InputSameDT		  off
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Ns"
+	  Position		  [655, 262, 695, 298]
+	  Gain			  "Ns"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "PN-junction characteristic"
+	  Position		  [430, 334, 510, 366]
+	  Orientation		  "left"
+	  Expr			  "Io*(exp(u/Vt)-1)"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Id"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1]
+	  Position		  [905, 152, 935, 183]
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Rs"
+	  Position		  [420, 160, 460, 190]
+	  NamePlacement		  "alternate"
+	  Gain			  "Rs"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [290, 35, 320, 65]
+	  UpperLimit		  "inf"
+	  LowerLimit		  "0"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  Ports			  [2, 1]
+	  Position		  [575, 270, 595, 290]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "-+|"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Vpvcell"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum2"
+	  Ports			  [2, 1]
+	  Position		  [325, 340, 345, 360]
+	  Orientation		  "left"
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum3"
+	  Ports			  [2, 1]
+	  Position		  [225, 270, 245, 290]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "-+|"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum4"
+	  Ports			  [2, 1]
+	  Position		  [285, 270, 305, 290]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch"
+	  Position		  [840, 255, 870, 285]
+	  Criteria		  "u2 > Threshold"
+	  InputSameDT		  off
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Vpv"
+	  Position		  [980, 263, 1010, 277]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Ppv"
+	  Position		  [980, 163, 1010, 177]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Insolation"
+	  SrcPort		  1
+	  DstBlock		  "Insolation to \ncurrent gain"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Iph"
+	  Labels		  [1, 0]
+	  SrcBlock		  "Insolation to \ncurrent gain"
+	  SrcPort		  1
+	  DstBlock		  "Sum3"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "Ipv"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Ipv"
+	  SrcPort		  1
+	  Points		  [30, 0]
+	  Branch {
+	    Points		    [0, -125]
+	    DstBlock		    "Saturation"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [145, 0]
+	    Branch {
+	      Labels		      [1, 0]
+	      DstBlock		      "Sum3"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "Rs"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Ppv"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum4"
+	  SrcPort		  1
+	  DstBlock		  "Algebraic Constraint"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Vd"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Algebraic Constraint"
+	  SrcPort		  1
+	  Points		  [50, 0]
+	  Branch {
+	    DstBlock		    "Sum1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 70]
+	    Branch {
+	      Points		      [0, 55]
+	      DstBlock		      "1/Rp"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "PN-junction characteristic"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  Name			  "Vpvcell"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  DstBlock		  "Ns"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Rs"
+	  SrcPort		  1
+	  Points		  [120, 0]
+	  DstBlock		  "Sum1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "By-pass diode"
+	  SrcPort		  1
+	  DstBlock		  "MinMax"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Ns"
+	  SrcPort		  1
+	  Points		  [20, 0]
+	  Branch {
+	    Points		    [0, -180]
+	    DstBlock		    "MinMax"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Switch"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  SrcBlock		  "MinMax"
+	  SrcPort		  1
+	  Points		  [30, 0; 0, 165]
+	  DstBlock		  "Switch"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, 65]
+	  DstBlock		  "Switch"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Switch"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    DstBlock		    "Vpv"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Product"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  Points		  [55, 0]
+	  Branch {
+	    Points		    [500, 0; 0, 110]
+	    DstBlock		    "Product"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 35]
+	    DstBlock		    "By-pass diode"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum3"
+	  SrcPort		  1
+	  DstBlock		  "Sum4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum2"
+	  SrcPort		  1
+	  Points		  [-25, 0]
+	  DstBlock		  "Sum4"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "Id"
+	  Labels		  [0, 0]
+	  SrcBlock		  "PN-junction characteristic"
+	  SrcPort		  1
+	  DstBlock		  "Sum2"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Vd/Rp"
+	  Labels		  [0, 0]
+	  SrcBlock		  "1/Rp"
+	  SrcPort		  1
+	  Points		  [-105, 0]
+	  DstBlock		  "Sum2"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "PV2"
+      Ports		      [2, 2]
+      Position		      [95, 132, 205, 183]
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskDescription	      "PV module model based on module data-sheet para"
+"meters. This model has Ipv input, which is suitable for series connections. L"
+"imitations: no temperature dependance, static model"
+      MaskPromptString	      "Short-circuit current|Open-circuit voltage|Curr"
+"ent at Pmax|Voltage at Pmax|By-pass diode?"
+      MaskStyleString	      "edit,edit,edit,edit,checkbox"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskCallbackString      "||||"
+      MaskEnableString	      "on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskVarAliasString      ",,,,"
+      MaskVariables	      "Isc=@1;Voc=@2;Ir=@3;Vr=@4;Diode=@5;"
+      MaskInitialization      "% calculation of PV module parameters\n% limita"
+"tion: constant temperature\nNs = round(Voc/0.61); % default number of cells i"
+"n series\nVt = 26e-3; % thermal voltage\nG = Isc/1000; % irradiation to short"
+"-circuit current gain\nVmpc = Vr/Ns; % cell voltage at rated Pmax\nVocc = Voc"
+"/Ns; % cell open-circuit voltage\nRmpp = Vmpc/Ir; % cell load resistance at P"
+"max\n%\nRp = 100*Vocc/Isc; % initial value for Rp\nVdm = Vocc; % initial valu"
+"e for Vdm\n%\n% iterative solution for model parameters: Io, Rs, Rp\nfor i=1:"
+"10\n%\n Idm = Isc - Ir - Vdm/Rp; % pn-junction (diode) current at MPP\n Io = "
+"(Isc-Vocc/Rp)/(exp(Vocc/Vt)-1); % pn-junction reverse saturation current\n Vd"
+"m = Vt*log(Idm/Io+1); % pn-junction (diode) voltage at MPP\n Rs = (Vdm-Vmpc)/"
+"Ir; % cell series resistance\n Rd = (Rmpp - Rs)*Rp/(Rp-Rmpp+Rs); % diode incr"
+"emental resistance at MPP\n Idm = Vt/Rd; % diode current at MPP based on incr"
+"emental resistance\n Rp = Vdm/(Isc-Ir-Idm); % cell parallel resistance\n%\nen"
+"d\n%"
+      MaskDisplay	      "plot([0.3 0.4],[0.4 0.8]);\nplot([0.4 0.5],[0.4"
+" 0.8]);\nplot([0.5 0.6],[0.4 0.8]);\nplot([0.6 0.7],[0.4 0.8]);\nplot([0.3 0."
+"6],[0.4 0.4]);\nplot([0.325 0.625],[0.5 0.5]);\nplot([0.35 0.65],[0.6 0.6]);"
+"\nplot([0.375 0.675],[0.7 0.7]);\nplot([0.4 0.7],[0.8 0.8]);\ntext(0.5,0.9,'P"
+"V module (I)','horizontalAlignment', 'center');\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "normalized"
+      MaskValueString	      "5.45|22.2|4.95|17.2|on"
+      MaskTabNameString	      ",,,,"
+      System {
+	Name			"PV2"
+	Location		[164, 268, 1200, 729]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Ipv"
+	  Position		  [25, 168, 55, 182]
+	  IconDisplay		  "Port number"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Ipv"
+	    PropagatedSignals	    "Ipv = Iref"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Insolation"
+	  Position		  [25, 273, 55, 287]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "1/Rp"
+	  Position		  [445, 390, 490, 420]
+	  Orientation		  "left"
+	  Gain			  "1/Rp"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Vd/Rp"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Algebraic Constraint"
+	  Ports			  [1, 1]
+	  Position		  [410, 265, 490, 295]
+	  SourceBlock		  "simulink/Math\nOperations/Algebraic Constra"
+"int"
+	  SourceType		  "Algebraic Constraint"
+	  ShowPortLabels	  on
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  z0			  "0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Vd"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "By-pass diode"
+	  Position		  [420, 67, 550, 103]
+	  Expr			  "-Vt*log((u/Io)+1)"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [745, 190, 775, 220]
+	  Value			  "Diode"
+	  VectorParams1D	  on
+	  SamplingMode		  "Sample based"
+	  OutDataTypeMode	  "Inherit from 'Constant value'"
+	  OutDataType		  "sfix(16)"
+	  ConRadixGroup		  "Use specified scaling"
+	  OutScaling		  "2^0"
+	  SampleTime		  "inf"
+	  FramePeriod		  "inf"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Insolation to \ncurrent gain"
+	  Position		  [115, 264, 160, 296]
+	  Gain			  "G"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Iph"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  MinMax
+	  Name			  "MinMax"
+	  Ports			  [2, 1]
+	  Position		  [750, 77, 780, 108]
+	  Function		  "max"
+	  Inputs		  "2"
+	  InputSameDT		  off
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Ns"
+	  Position		  [655, 262, 695, 298]
+	  Gain			  "Ns"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "PN-junction characteristic"
+	  Position		  [430, 334, 510, 366]
+	  Orientation		  "left"
+	  Expr			  "Io*(exp(u/Vt)-1)"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Id"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1]
+	  Position		  [905, 152, 935, 183]
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Rs"
+	  Position		  [420, 160, 460, 190]
+	  NamePlacement		  "alternate"
+	  Gain			  "Rs"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [290, 35, 320, 65]
+	  UpperLimit		  "inf"
+	  LowerLimit		  "0"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  Ports			  [2, 1]
+	  Position		  [575, 270, 595, 290]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "-+|"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Vpvcell"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum2"
+	  Ports			  [2, 1]
+	  Position		  [325, 340, 345, 360]
+	  Orientation		  "left"
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum3"
+	  Ports			  [2, 1]
+	  Position		  [225, 270, 245, 290]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "-+|"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum4"
+	  Ports			  [2, 1]
+	  Position		  [285, 270, 305, 290]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch"
+	  Position		  [840, 255, 870, 285]
+	  Criteria		  "u2 > Threshold"
+	  InputSameDT		  off
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Vpv"
+	  Position		  [980, 263, 1010, 277]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Ppv"
+	  Position		  [980, 163, 1010, 177]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Insolation"
+	  SrcPort		  1
+	  DstBlock		  "Insolation to \ncurrent gain"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Iph"
+	  Labels		  [1, 0]
+	  SrcBlock		  "Insolation to \ncurrent gain"
+	  SrcPort		  1
+	  DstBlock		  "Sum3"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "Ipv"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Ipv"
+	  SrcPort		  1
+	  Points		  [30, 0]
+	  Branch {
+	    Points		    [0, -125]
+	    DstBlock		    "Saturation"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [145, 0]
+	    Branch {
+	      Labels		      [1, 0]
+	      DstBlock		      "Sum3"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "Rs"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Ppv"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum4"
+	  SrcPort		  1
+	  DstBlock		  "Algebraic Constraint"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Vd"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Algebraic Constraint"
+	  SrcPort		  1
+	  Points		  [50, 0]
+	  Branch {
+	    DstBlock		    "Sum1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 70]
+	    Branch {
+	      Points		      [0, 55]
+	      DstBlock		      "1/Rp"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "PN-junction characteristic"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  Name			  "Vpvcell"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  DstBlock		  "Ns"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Rs"
+	  SrcPort		  1
+	  Points		  [120, 0]
+	  DstBlock		  "Sum1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "By-pass diode"
+	  SrcPort		  1
+	  DstBlock		  "MinMax"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Ns"
+	  SrcPort		  1
+	  Points		  [20, 0]
+	  Branch {
+	    Points		    [0, -180]
+	    DstBlock		    "MinMax"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Switch"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  SrcBlock		  "MinMax"
+	  SrcPort		  1
+	  Points		  [30, 0; 0, 165]
+	  DstBlock		  "Switch"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, 65]
+	  DstBlock		  "Switch"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Switch"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    DstBlock		    "Vpv"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Product"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  Points		  [55, 0]
+	  Branch {
+	    Points		    [500, 0; 0, 110]
+	    DstBlock		    "Product"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 35]
+	    DstBlock		    "By-pass diode"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum3"
+	  SrcPort		  1
+	  DstBlock		  "Sum4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum2"
+	  SrcPort		  1
+	  Points		  [-25, 0]
+	  DstBlock		  "Sum4"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "Id"
+	  Labels		  [0, 0]
+	  SrcBlock		  "PN-junction characteristic"
+	  SrcPort		  1
+	  DstBlock		  "Sum2"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Vd/Rp"
+	  Labels		  [0, 0]
+	  SrcBlock		  "1/Rp"
+	  SrcPort		  1
+	  Points		  [-105, 0]
+	  DstBlock		  "Sum2"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "PV3"
+      Ports		      [2, 2]
+      Position		      [95, 222, 205, 273]
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskDescription	      "PV module model based on module data-sheet para"
+"meters. This model has Ipv input, which is suitable for series connections. L"
+"imitations: no temperature dependance, static model"
+      MaskPromptString	      "Short-circuit current|Open-circuit voltage|Curr"
+"ent at Pmax|Voltage at Pmax|By-pass diode?"
+      MaskStyleString	      "edit,edit,edit,edit,checkbox"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskCallbackString      "||||"
+      MaskEnableString	      "on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskVarAliasString      ",,,,"
+      MaskVariables	      "Isc=@1;Voc=@2;Ir=@3;Vr=@4;Diode=@5;"
+      MaskInitialization      "% calculation of PV module parameters\n% limita"
+"tion: constant temperature\nNs = round(Voc/0.61); % default number of cells i"
+"n series\nVt = 26e-3; % thermal voltage\nG = Isc/1000; % irradiation to short"
+"-circuit current gain\nVmpc = Vr/Ns; % cell voltage at rated Pmax\nVocc = Voc"
+"/Ns; % cell open-circuit voltage\nRmpp = Vmpc/Ir; % cell load resistance at P"
+"max\n%\nRp = 100*Vocc/Isc; % initial value for Rp\nVdm = Vocc; % initial valu"
+"e for Vdm\n%\n% iterative solution for model parameters: Io, Rs, Rp\nfor i=1:"
+"10\n%\n Idm = Isc - Ir - Vdm/Rp; % pn-junction (diode) current at MPP\n Io = "
+"(Isc-Vocc/Rp)/(exp(Vocc/Vt)-1); % pn-junction reverse saturation current\n Vd"
+"m = Vt*log(Idm/Io+1); % pn-junction (diode) voltage at MPP\n Rs = (Vdm-Vmpc)/"
+"Ir; % cell series resistance\n Rd = (Rmpp - Rs)*Rp/(Rp-Rmpp+Rs); % diode incr"
+"emental resistance at MPP\n Idm = Vt/Rd; % diode current at MPP based on incr"
+"emental resistance\n Rp = Vdm/(Isc-Ir-Idm); % cell parallel resistance\n%\nen"
+"d\n%"
+      MaskDisplay	      "plot([0.3 0.4],[0.4 0.8]);\nplot([0.4 0.5],[0.4"
+" 0.8]);\nplot([0.5 0.6],[0.4 0.8]);\nplot([0.6 0.7],[0.4 0.8]);\nplot([0.3 0."
+"6],[0.4 0.4]);\nplot([0.325 0.625],[0.5 0.5]);\nplot([0.35 0.65],[0.6 0.6]);"
+"\nplot([0.375 0.675],[0.7 0.7]);\nplot([0.4 0.7],[0.8 0.8]);\ntext(0.5,0.9,'P"
+"V module (I)','horizontalAlignment', 'center');\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "normalized"
+      MaskValueString	      "5.45|22.2|4.95|17.2|on"
+      MaskTabNameString	      ",,,,"
+      System {
+	Name			"PV3"
+	Location		[164, 268, 1200, 729]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Ipv"
+	  Position		  [25, 168, 55, 182]
+	  IconDisplay		  "Port number"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Ipv"
+	    PropagatedSignals	    "Ipv = Iref"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Insolation"
+	  Position		  [25, 273, 55, 287]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "1/Rp"
+	  Position		  [445, 390, 490, 420]
+	  Orientation		  "left"
+	  Gain			  "1/Rp"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Vd/Rp"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Algebraic Constraint"
+	  Ports			  [1, 1]
+	  Position		  [410, 265, 490, 295]
+	  SourceBlock		  "simulink/Math\nOperations/Algebraic Constra"
+"int"
+	  SourceType		  "Algebraic Constraint"
+	  ShowPortLabels	  on
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  z0			  "0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Vd"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "By-pass diode"
+	  Position		  [420, 67, 550, 103]
+	  Expr			  "-Vt*log((u/Io)+1)"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [745, 190, 775, 220]
+	  Value			  "Diode"
+	  VectorParams1D	  on
+	  SamplingMode		  "Sample based"
+	  OutDataTypeMode	  "Inherit from 'Constant value'"
+	  OutDataType		  "sfix(16)"
+	  ConRadixGroup		  "Use specified scaling"
+	  OutScaling		  "2^0"
+	  SampleTime		  "inf"
+	  FramePeriod		  "inf"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Insolation to \ncurrent gain"
+	  Position		  [115, 264, 160, 296]
+	  Gain			  "G"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Iph"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  MinMax
+	  Name			  "MinMax"
+	  Ports			  [2, 1]
+	  Position		  [750, 77, 780, 108]
+	  Function		  "max"
+	  Inputs		  "2"
+	  InputSameDT		  off
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Ns"
+	  Position		  [655, 262, 695, 298]
+	  Gain			  "Ns"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "PN-junction characteristic"
+	  Position		  [430, 334, 510, 366]
+	  Orientation		  "left"
+	  Expr			  "Io*(exp(u/Vt)-1)"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Id"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1]
+	  Position		  [905, 152, 935, 183]
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Rs"
+	  Position		  [420, 160, 460, 190]
+	  NamePlacement		  "alternate"
+	  Gain			  "Rs"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [290, 35, 320, 65]
+	  UpperLimit		  "inf"
+	  LowerLimit		  "0"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  Ports			  [2, 1]
+	  Position		  [575, 270, 595, 290]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "-+|"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Vpvcell"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum2"
+	  Ports			  [2, 1]
+	  Position		  [325, 340, 345, 360]
+	  Orientation		  "left"
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum3"
+	  Ports			  [2, 1]
+	  Position		  [225, 270, 245, 290]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "-+|"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum4"
+	  Ports			  [2, 1]
+	  Position		  [285, 270, 305, 290]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch"
+	  Position		  [840, 255, 870, 285]
+	  Criteria		  "u2 > Threshold"
+	  InputSameDT		  off
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Vpv"
+	  Position		  [980, 263, 1010, 277]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Ppv"
+	  Position		  [980, 163, 1010, 177]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Insolation"
+	  SrcPort		  1
+	  DstBlock		  "Insolation to \ncurrent gain"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Iph"
+	  Labels		  [1, 0]
+	  SrcBlock		  "Insolation to \ncurrent gain"
+	  SrcPort		  1
+	  DstBlock		  "Sum3"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "Ipv"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Ipv"
+	  SrcPort		  1
+	  Points		  [30, 0]
+	  Branch {
+	    Points		    [0, -125]
+	    DstBlock		    "Saturation"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [145, 0]
+	    Branch {
+	      Labels		      [1, 0]
+	      DstBlock		      "Sum3"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "Rs"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Ppv"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum4"
+	  SrcPort		  1
+	  DstBlock		  "Algebraic Constraint"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Vd"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Algebraic Constraint"
+	  SrcPort		  1
+	  Points		  [50, 0]
+	  Branch {
+	    DstBlock		    "Sum1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 70]
+	    Branch {
+	      Points		      [0, 55]
+	      DstBlock		      "1/Rp"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "PN-junction characteristic"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  Name			  "Vpvcell"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  DstBlock		  "Ns"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Rs"
+	  SrcPort		  1
+	  Points		  [120, 0]
+	  DstBlock		  "Sum1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "By-pass diode"
+	  SrcPort		  1
+	  DstBlock		  "MinMax"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Ns"
+	  SrcPort		  1
+	  Points		  [20, 0]
+	  Branch {
+	    Points		    [0, -180]
+	    DstBlock		    "MinMax"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Switch"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  SrcBlock		  "MinMax"
+	  SrcPort		  1
+	  Points		  [30, 0; 0, 165]
+	  DstBlock		  "Switch"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, 65]
+	  DstBlock		  "Switch"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Switch"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    DstBlock		    "Vpv"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Product"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  Points		  [55, 0]
+	  Branch {
+	    Points		    [500, 0; 0, 110]
+	    DstBlock		    "Product"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 35]
+	    DstBlock		    "By-pass diode"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum3"
+	  SrcPort		  1
+	  DstBlock		  "Sum4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum2"
+	  SrcPort		  1
+	  Points		  [-25, 0]
+	  DstBlock		  "Sum4"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "Id"
+	  Labels		  [0, 0]
+	  SrcBlock		  "PN-junction characteristic"
+	  SrcPort		  1
+	  DstBlock		  "Sum2"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Vd/Rp"
+	  Labels		  [0, 0]
+	  SrcBlock		  "1/Rp"
+	  SrcPort		  1
+	  Points		  [-105, 0]
+	  DstBlock		  "Sum2"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "PV4"
+      Ports		      [2, 2]
+      Position		      [95, 312, 205, 363]
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskDescription	      "PV module model based on module data-sheet para"
+"meters. This model has Ipv input, which is suitable for series connections. L"
+"imitations: no temperature dependance, static model"
+      MaskPromptString	      "Short-circuit current|Open-circuit voltage|Curr"
+"ent at Pmax|Voltage at Pmax|By-pass diode?"
+      MaskStyleString	      "edit,edit,edit,edit,checkbox"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskCallbackString      "||||"
+      MaskEnableString	      "on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskVarAliasString      ",,,,"
+      MaskVariables	      "Isc=@1;Voc=@2;Ir=@3;Vr=@4;Diode=@5;"
+      MaskInitialization      "% calculation of PV module parameters\n% limita"
+"tion: constant temperature\nNs = round(Voc/0.61); % default number of cells i"
+"n series\nVt = 26e-3; % thermal voltage\nG = Isc/1000; % irradiation to short"
+"-circuit current gain\nVmpc = Vr/Ns; % cell voltage at rated Pmax\nVocc = Voc"
+"/Ns; % cell open-circuit voltage\nRmpp = Vmpc/Ir; % cell load resistance at P"
+"max\n%\nRp = 100*Vocc/Isc; % initial value for Rp\nVdm = Vocc; % initial valu"
+"e for Vdm\n%\n% iterative solution for model parameters: Io, Rs, Rp\nfor i=1:"
+"10\n%\n Idm = Isc - Ir - Vdm/Rp; % pn-junction (diode) current at MPP\n Io = "
+"(Isc-Vocc/Rp)/(exp(Vocc/Vt)-1); % pn-junction reverse saturation current\n Vd"
+"m = Vt*log(Idm/Io+1); % pn-junction (diode) voltage at MPP\n Rs = (Vdm-Vmpc)/"
+"Ir; % cell series resistance\n Rd = (Rmpp - Rs)*Rp/(Rp-Rmpp+Rs); % diode incr"
+"emental resistance at MPP\n Idm = Vt/Rd; % diode current at MPP based on incr"
+"emental resistance\n Rp = Vdm/(Isc-Ir-Idm); % cell parallel resistance\n%\nen"
+"d\n%"
+      MaskDisplay	      "plot([0.3 0.4],[0.4 0.8]);\nplot([0.4 0.5],[0.4"
+" 0.8]);\nplot([0.5 0.6],[0.4 0.8]);\nplot([0.6 0.7],[0.4 0.8]);\nplot([0.3 0."
+"6],[0.4 0.4]);\nplot([0.325 0.625],[0.5 0.5]);\nplot([0.35 0.65],[0.6 0.6]);"
+"\nplot([0.375 0.675],[0.7 0.7]);\nplot([0.4 0.7],[0.8 0.8]);\ntext(0.5,0.9,'P"
+"V module (I)','horizontalAlignment', 'center');\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "normalized"
+      MaskValueString	      "5.45|22.2|4.95|17.2|on"
+      MaskTabNameString	      ",,,,"
+      System {
+	Name			"PV4"
+	Location		[164, 268, 1200, 729]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Ipv"
+	  Position		  [25, 168, 55, 182]
+	  IconDisplay		  "Port number"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Ipv"
+	    PropagatedSignals	    "Ipv = Iref"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Insolation"
+	  Position		  [25, 273, 55, 287]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "1/Rp"
+	  Position		  [445, 390, 490, 420]
+	  Orientation		  "left"
+	  Gain			  "1/Rp"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Vd/Rp"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Algebraic Constraint"
+	  Ports			  [1, 1]
+	  Position		  [410, 265, 490, 295]
+	  SourceBlock		  "simulink/Math\nOperations/Algebraic Constra"
+"int"
+	  SourceType		  "Algebraic Constraint"
+	  ShowPortLabels	  on
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  z0			  "0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Vd"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "By-pass diode"
+	  Position		  [420, 67, 550, 103]
+	  Expr			  "-Vt*log((u/Io)+1)"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [745, 190, 775, 220]
+	  Value			  "Diode"
+	  VectorParams1D	  on
+	  SamplingMode		  "Sample based"
+	  OutDataTypeMode	  "Inherit from 'Constant value'"
+	  OutDataType		  "sfix(16)"
+	  ConRadixGroup		  "Use specified scaling"
+	  OutScaling		  "2^0"
+	  SampleTime		  "inf"
+	  FramePeriod		  "inf"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Insolation to \ncurrent gain"
+	  Position		  [115, 264, 160, 296]
+	  Gain			  "G"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Iph"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  MinMax
+	  Name			  "MinMax"
+	  Ports			  [2, 1]
+	  Position		  [750, 77, 780, 108]
+	  Function		  "max"
+	  Inputs		  "2"
+	  InputSameDT		  off
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Ns"
+	  Position		  [655, 262, 695, 298]
+	  Gain			  "Ns"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "PN-junction characteristic"
+	  Position		  [430, 334, 510, 366]
+	  Orientation		  "left"
+	  Expr			  "Io*(exp(u/Vt)-1)"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Id"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1]
+	  Position		  [905, 152, 935, 183]
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Rs"
+	  Position		  [420, 160, 460, 190]
+	  NamePlacement		  "alternate"
+	  Gain			  "Rs"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [290, 35, 320, 65]
+	  UpperLimit		  "inf"
+	  LowerLimit		  "0"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  Ports			  [2, 1]
+	  Position		  [575, 270, 595, 290]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "-+|"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Vpvcell"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum2"
+	  Ports			  [2, 1]
+	  Position		  [325, 340, 345, 360]
+	  Orientation		  "left"
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum3"
+	  Ports			  [2, 1]
+	  Position		  [225, 270, 245, 290]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "-+|"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum4"
+	  Ports			  [2, 1]
+	  Position		  [285, 270, 305, 290]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch"
+	  Position		  [840, 255, 870, 285]
+	  Criteria		  "u2 > Threshold"
+	  InputSameDT		  off
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Vpv"
+	  Position		  [980, 263, 1010, 277]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Ppv"
+	  Position		  [980, 163, 1010, 177]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Insolation"
+	  SrcPort		  1
+	  DstBlock		  "Insolation to \ncurrent gain"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Iph"
+	  Labels		  [1, 0]
+	  SrcBlock		  "Insolation to \ncurrent gain"
+	  SrcPort		  1
+	  DstBlock		  "Sum3"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "Ipv"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Ipv"
+	  SrcPort		  1
+	  Points		  [30, 0]
+	  Branch {
+	    Points		    [0, -125]
+	    DstBlock		    "Saturation"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [145, 0]
+	    Branch {
+	      Labels		      [1, 0]
+	      DstBlock		      "Sum3"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "Rs"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Ppv"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum4"
+	  SrcPort		  1
+	  DstBlock		  "Algebraic Constraint"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Vd"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Algebraic Constraint"
+	  SrcPort		  1
+	  Points		  [50, 0]
+	  Branch {
+	    DstBlock		    "Sum1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 70]
+	    Branch {
+	      Points		      [0, 55]
+	      DstBlock		      "1/Rp"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "PN-junction characteristic"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  Name			  "Vpvcell"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  DstBlock		  "Ns"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Rs"
+	  SrcPort		  1
+	  Points		  [120, 0]
+	  DstBlock		  "Sum1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "By-pass diode"
+	  SrcPort		  1
+	  DstBlock		  "MinMax"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Ns"
+	  SrcPort		  1
+	  Points		  [20, 0]
+	  Branch {
+	    Points		    [0, -180]
+	    DstBlock		    "MinMax"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Switch"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  SrcBlock		  "MinMax"
+	  SrcPort		  1
+	  Points		  [30, 0; 0, 165]
+	  DstBlock		  "Switch"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, 65]
+	  DstBlock		  "Switch"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Switch"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    DstBlock		    "Vpv"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Product"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  Points		  [55, 0]
+	  Branch {
+	    Points		    [500, 0; 0, 110]
+	    DstBlock		    "Product"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 35]
+	    DstBlock		    "By-pass diode"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum3"
+	  SrcPort		  1
+	  DstBlock		  "Sum4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum2"
+	  SrcPort		  1
+	  Points		  [-25, 0]
+	  DstBlock		  "Sum4"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "Id"
+	  Labels		  [0, 0]
+	  SrcBlock		  "PN-junction characteristic"
+	  SrcPort		  1
+	  DstBlock		  "Sum2"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Vd/Rp"
+	  Labels		  [0, 0]
+	  SrcBlock		  "1/Rp"
+	  SrcPort		  1
+	  Points		  [-105, 0]
+	  DstBlock		  "Sum2"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "PV5"
+      Ports		      [2, 2]
+      Position		      [95, 402, 205, 453]
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskDescription	      "PV module model based on module data-sheet para"
+"meters. This model has Ipv input, which is suitable for series connections. L"
+"imitations: no temperature dependance, static model"
+      MaskPromptString	      "Short-circuit current|Open-circuit voltage|Curr"
+"ent at Pmax|Voltage at Pmax|By-pass diode?"
+      MaskStyleString	      "edit,edit,edit,edit,checkbox"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskCallbackString      "||||"
+      MaskEnableString	      "on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskVarAliasString      ",,,,"
+      MaskVariables	      "Isc=@1;Voc=@2;Ir=@3;Vr=@4;Diode=@5;"
+      MaskInitialization      "% calculation of PV module parameters\n% limita"
+"tion: constant temperature\nNs = round(Voc/0.61); % default number of cells i"
+"n series\nVt = 26e-3; % thermal voltage\nG = Isc/1000; % irradiation to short"
+"-circuit current gain\nVmpc = Vr/Ns; % cell voltage at rated Pmax\nVocc = Voc"
+"/Ns; % cell open-circuit voltage\nRmpp = Vmpc/Ir; % cell load resistance at P"
+"max\n%\nRp = 100*Vocc/Isc; % initial value for Rp\nVdm = Vocc; % initial valu"
+"e for Vdm\n%\n% iterative solution for model parameters: Io, Rs, Rp\nfor i=1:"
+"10\n%\n Idm = Isc - Ir - Vdm/Rp; % pn-junction (diode) current at MPP\n Io = "
+"(Isc-Vocc/Rp)/(exp(Vocc/Vt)-1); % pn-junction reverse saturation current\n Vd"
+"m = Vt*log(Idm/Io+1); % pn-junction (diode) voltage at MPP\n Rs = (Vdm-Vmpc)/"
+"Ir; % cell series resistance\n Rd = (Rmpp - Rs)*Rp/(Rp-Rmpp+Rs); % diode incr"
+"emental resistance at MPP\n Idm = Vt/Rd; % diode current at MPP based on incr"
+"emental resistance\n Rp = Vdm/(Isc-Ir-Idm); % cell parallel resistance\n%\nen"
+"d\n%"
+      MaskDisplay	      "plot([0.3 0.4],[0.4 0.8]);\nplot([0.4 0.5],[0.4"
+" 0.8]);\nplot([0.5 0.6],[0.4 0.8]);\nplot([0.6 0.7],[0.4 0.8]);\nplot([0.3 0."
+"6],[0.4 0.4]);\nplot([0.325 0.625],[0.5 0.5]);\nplot([0.35 0.65],[0.6 0.6]);"
+"\nplot([0.375 0.675],[0.7 0.7]);\nplot([0.4 0.7],[0.8 0.8]);\ntext(0.5,0.9,'P"
+"V module (I)','horizontalAlignment', 'center');\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "normalized"
+      MaskValueString	      "5.45|22.2|4.95|17.2|on"
+      MaskTabNameString	      ",,,,"
+      System {
+	Name			"PV5"
+	Location		[164, 268, 1200, 729]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Ipv"
+	  Position		  [25, 168, 55, 182]
+	  IconDisplay		  "Port number"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Ipv"
+	    PropagatedSignals	    "Ipv = Iref"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Insolation"
+	  Position		  [25, 273, 55, 287]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "1/Rp"
+	  Position		  [445, 390, 490, 420]
+	  Orientation		  "left"
+	  Gain			  "1/Rp"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Vd/Rp"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Algebraic Constraint"
+	  Ports			  [1, 1]
+	  Position		  [410, 265, 490, 295]
+	  SourceBlock		  "simulink/Math\nOperations/Algebraic Constra"
+"int"
+	  SourceType		  "Algebraic Constraint"
+	  ShowPortLabels	  on
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  z0			  "0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Vd"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "By-pass diode"
+	  Position		  [420, 67, 550, 103]
+	  Expr			  "-Vt*log((u/Io)+1)"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [745, 190, 775, 220]
+	  Value			  "Diode"
+	  VectorParams1D	  on
+	  SamplingMode		  "Sample based"
+	  OutDataTypeMode	  "Inherit from 'Constant value'"
+	  OutDataType		  "sfix(16)"
+	  ConRadixGroup		  "Use specified scaling"
+	  OutScaling		  "2^0"
+	  SampleTime		  "inf"
+	  FramePeriod		  "inf"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Insolation to \ncurrent gain"
+	  Position		  [115, 264, 160, 296]
+	  Gain			  "G"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Iph"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  MinMax
+	  Name			  "MinMax"
+	  Ports			  [2, 1]
+	  Position		  [750, 77, 780, 108]
+	  Function		  "max"
+	  Inputs		  "2"
+	  InputSameDT		  off
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Ns"
+	  Position		  [655, 262, 695, 298]
+	  Gain			  "Ns"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "PN-junction characteristic"
+	  Position		  [430, 334, 510, 366]
+	  Orientation		  "left"
+	  Expr			  "Io*(exp(u/Vt)-1)"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Id"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1]
+	  Position		  [905, 152, 935, 183]
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Rs"
+	  Position		  [420, 160, 460, 190]
+	  NamePlacement		  "alternate"
+	  Gain			  "Rs"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [290, 35, 320, 65]
+	  UpperLimit		  "inf"
+	  LowerLimit		  "0"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  Ports			  [2, 1]
+	  Position		  [575, 270, 595, 290]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "-+|"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Vpvcell"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum2"
+	  Ports			  [2, 1]
+	  Position		  [325, 340, 345, 360]
+	  Orientation		  "left"
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum3"
+	  Ports			  [2, 1]
+	  Position		  [225, 270, 245, 290]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "-+|"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum4"
+	  Ports			  [2, 1]
+	  Position		  [285, 270, 305, 290]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch"
+	  Position		  [840, 255, 870, 285]
+	  Criteria		  "u2 > Threshold"
+	  InputSameDT		  off
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Vpv"
+	  Position		  [980, 263, 1010, 277]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Ppv"
+	  Position		  [980, 163, 1010, 177]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Insolation"
+	  SrcPort		  1
+	  DstBlock		  "Insolation to \ncurrent gain"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Iph"
+	  Labels		  [1, 0]
+	  SrcBlock		  "Insolation to \ncurrent gain"
+	  SrcPort		  1
+	  DstBlock		  "Sum3"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "Ipv"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Ipv"
+	  SrcPort		  1
+	  Points		  [30, 0]
+	  Branch {
+	    Points		    [0, -125]
+	    DstBlock		    "Saturation"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [145, 0]
+	    Branch {
+	      Labels		      [1, 0]
+	      DstBlock		      "Sum3"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "Rs"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Ppv"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum4"
+	  SrcPort		  1
+	  DstBlock		  "Algebraic Constraint"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Vd"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Algebraic Constraint"
+	  SrcPort		  1
+	  Points		  [50, 0]
+	  Branch {
+	    DstBlock		    "Sum1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 70]
+	    Branch {
+	      Points		      [0, 55]
+	      DstBlock		      "1/Rp"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "PN-junction characteristic"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  Name			  "Vpvcell"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  DstBlock		  "Ns"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Rs"
+	  SrcPort		  1
+	  Points		  [120, 0]
+	  DstBlock		  "Sum1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "By-pass diode"
+	  SrcPort		  1
+	  DstBlock		  "MinMax"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Ns"
+	  SrcPort		  1
+	  Points		  [20, 0]
+	  Branch {
+	    Points		    [0, -180]
+	    DstBlock		    "MinMax"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Switch"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  SrcBlock		  "MinMax"
+	  SrcPort		  1
+	  Points		  [30, 0; 0, 165]
+	  DstBlock		  "Switch"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, 65]
+	  DstBlock		  "Switch"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Switch"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    DstBlock		    "Vpv"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Product"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  Points		  [55, 0]
+	  Branch {
+	    Points		    [500, 0; 0, 110]
+	    DstBlock		    "Product"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 35]
+	    DstBlock		    "By-pass diode"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum3"
+	  SrcPort		  1
+	  DstBlock		  "Sum4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum2"
+	  SrcPort		  1
+	  Points		  [-25, 0]
+	  DstBlock		  "Sum4"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "Id"
+	  Labels		  [0, 0]
+	  SrcBlock		  "PN-junction characteristic"
+	  SrcPort		  1
+	  DstBlock		  "Sum2"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Vd/Rp"
+	  Labels		  [0, 0]
+	  SrcBlock		  "1/Rp"
+	  SrcPort		  1
+	  Points		  [-105, 0]
+	  DstBlock		  "Sum2"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "PV6"
+      Ports		      [2, 2]
+      Position		      [95, 492, 205, 543]
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskDescription	      "PV module model based on module data-sheet para"
+"meters. This model has Ipv input, which is suitable for series connections. L"
+"imitations: no temperature dependance, static model"
+      MaskPromptString	      "Short-circuit current|Open-circuit voltage|Curr"
+"ent at Pmax|Voltage at Pmax|By-pass diode?"
+      MaskStyleString	      "edit,edit,edit,edit,checkbox"
+      MaskTunableValueString  "on,on,on,on,on"
+      MaskCallbackString      "||||"
+      MaskEnableString	      "on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on"
+      MaskVarAliasString      ",,,,"
+      MaskVariables	      "Isc=@1;Voc=@2;Ir=@3;Vr=@4;Diode=@5;"
+      MaskInitialization      "% calculation of PV module parameters\n% limita"
+"tion: constant temperature\nNs = round(Voc/0.61); % default number of cells i"
+"n series\nVt = 26e-3; % thermal voltage\nG = Isc/1000; % irradiation to short"
+"-circuit current gain\nVmpc = Vr/Ns; % cell voltage at rated Pmax\nVocc = Voc"
+"/Ns; % cell open-circuit voltage\nRmpp = Vmpc/Ir; % cell load resistance at P"
+"max\n%\nRp = 100*Vocc/Isc; % initial value for Rp\nVdm = Vocc; % initial valu"
+"e for Vdm\n%\n% iterative solution for model parameters: Io, Rs, Rp\nfor i=1:"
+"10\n%\n Idm = Isc - Ir - Vdm/Rp; % pn-junction (diode) current at MPP\n Io = "
+"(Isc-Vocc/Rp)/(exp(Vocc/Vt)-1); % pn-junction reverse saturation current\n Vd"
+"m = Vt*log(Idm/Io+1); % pn-junction (diode) voltage at MPP\n Rs = (Vdm-Vmpc)/"
+"Ir; % cell series resistance\n Rd = (Rmpp - Rs)*Rp/(Rp-Rmpp+Rs); % diode incr"
+"emental resistance at MPP\n Idm = Vt/Rd; % diode current at MPP based on incr"
+"emental resistance\n Rp = Vdm/(Isc-Ir-Idm); % cell parallel resistance\n%\nen"
+"d\n%"
+      MaskDisplay	      "plot([0.3 0.4],[0.4 0.8]);\nplot([0.4 0.5],[0.4"
+" 0.8]);\nplot([0.5 0.6],[0.4 0.8]);\nplot([0.6 0.7],[0.4 0.8]);\nplot([0.3 0."
+"6],[0.4 0.4]);\nplot([0.325 0.625],[0.5 0.5]);\nplot([0.35 0.65],[0.6 0.6]);"
+"\nplot([0.375 0.675],[0.7 0.7]);\nplot([0.4 0.7],[0.8 0.8]);\ntext(0.5,0.9,'P"
+"V module (I)','horizontalAlignment', 'center');\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "normalized"
+      MaskValueString	      "5.45|22.2|4.95|17.2|on"
+      MaskTabNameString	      ",,,,"
+      System {
+	Name			"PV6"
+	Location		[164, 268, 1200, 729]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Ipv"
+	  Position		  [25, 168, 55, 182]
+	  IconDisplay		  "Port number"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Ipv"
+	    PropagatedSignals	    "Ipv = Iref"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Insolation"
+	  Position		  [25, 273, 55, 287]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "1/Rp"
+	  Position		  [445, 390, 490, 420]
+	  Orientation		  "left"
+	  Gain			  "1/Rp"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Vd/Rp"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Algebraic Constraint"
+	  Ports			  [1, 1]
+	  Position		  [410, 265, 490, 295]
+	  SourceBlock		  "simulink/Math\nOperations/Algebraic Constra"
+"int"
+	  SourceType		  "Algebraic Constraint"
+	  ShowPortLabels	  on
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  z0			  "0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Vd"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "By-pass diode"
+	  Position		  [420, 67, 550, 103]
+	  Expr			  "-Vt*log((u/Io)+1)"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [745, 190, 775, 220]
+	  Value			  "Diode"
+	  VectorParams1D	  on
+	  SamplingMode		  "Sample based"
+	  OutDataTypeMode	  "Inherit from 'Constant value'"
+	  OutDataType		  "sfix(16)"
+	  ConRadixGroup		  "Use specified scaling"
+	  OutScaling		  "2^0"
+	  SampleTime		  "inf"
+	  FramePeriod		  "inf"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Insolation to \ncurrent gain"
+	  Position		  [115, 264, 160, 296]
+	  Gain			  "G"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Iph"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  MinMax
+	  Name			  "MinMax"
+	  Ports			  [2, 1]
+	  Position		  [750, 77, 780, 108]
+	  Function		  "max"
+	  Inputs		  "2"
+	  InputSameDT		  off
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Ns"
+	  Position		  [655, 262, 695, 298]
+	  Gain			  "Ns"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "PN-junction characteristic"
+	  Position		  [430, 334, 510, 366]
+	  Orientation		  "left"
+	  Expr			  "Io*(exp(u/Vt)-1)"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Id"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1]
+	  Position		  [905, 152, 935, 183]
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Rs"
+	  Position		  [420, 160, 460, 190]
+	  NamePlacement		  "alternate"
+	  Gain			  "Rs"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [290, 35, 320, 65]
+	  UpperLimit		  "inf"
+	  LowerLimit		  "0"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  Ports			  [2, 1]
+	  Position		  [575, 270, 595, 290]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "-+|"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Vpvcell"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum2"
+	  Ports			  [2, 1]
+	  Position		  [325, 340, 345, 360]
+	  Orientation		  "left"
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum3"
+	  Ports			  [2, 1]
+	  Position		  [225, 270, 245, 290]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "-+|"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum4"
+	  Ports			  [2, 1]
+	  Position		  [285, 270, 305, 290]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch"
+	  Position		  [840, 255, 870, 285]
+	  Criteria		  "u2 > Threshold"
+	  InputSameDT		  off
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Vpv"
+	  Position		  [980, 263, 1010, 277]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Ppv"
+	  Position		  [980, 163, 1010, 177]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Insolation"
+	  SrcPort		  1
+	  DstBlock		  "Insolation to \ncurrent gain"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Iph"
+	  Labels		  [1, 0]
+	  SrcBlock		  "Insolation to \ncurrent gain"
+	  SrcPort		  1
+	  DstBlock		  "Sum3"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "Ipv"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Ipv"
+	  SrcPort		  1
+	  Points		  [30, 0]
+	  Branch {
+	    Points		    [0, -125]
+	    DstBlock		    "Saturation"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [145, 0]
+	    Branch {
+	      Labels		      [1, 0]
+	      DstBlock		      "Sum3"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "Rs"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Ppv"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum4"
+	  SrcPort		  1
+	  DstBlock		  "Algebraic Constraint"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Vd"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Algebraic Constraint"
+	  SrcPort		  1
+	  Points		  [50, 0]
+	  Branch {
+	    DstBlock		    "Sum1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 70]
+	    Branch {
+	      Points		      [0, 55]
+	      DstBlock		      "1/Rp"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "PN-junction characteristic"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  Name			  "Vpvcell"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  DstBlock		  "Ns"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Rs"
+	  SrcPort		  1
+	  Points		  [120, 0]
+	  DstBlock		  "Sum1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "By-pass diode"
+	  SrcPort		  1
+	  DstBlock		  "MinMax"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Ns"
+	  SrcPort		  1
+	  Points		  [20, 0]
+	  Branch {
+	    Points		    [0, -180]
+	    DstBlock		    "MinMax"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Switch"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  SrcBlock		  "MinMax"
+	  SrcPort		  1
+	  Points		  [30, 0; 0, 165]
+	  DstBlock		  "Switch"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, 65]
+	  DstBlock		  "Switch"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Switch"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    DstBlock		    "Vpv"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Product"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  Points		  [55, 0]
+	  Branch {
+	    Points		    [500, 0; 0, 110]
+	    DstBlock		    "Product"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 35]
+	    DstBlock		    "By-pass diode"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Sum3"
+	  SrcPort		  1
+	  DstBlock		  "Sum4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum2"
+	  SrcPort		  1
+	  Points		  [-25, 0]
+	  DstBlock		  "Sum4"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "Id"
+	  Labels		  [0, 0]
+	  SrcBlock		  "PN-junction characteristic"
+	  SrcPort		  1
+	  DstBlock		  "Sum2"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Vd/Rp"
+	  Labels		  [0, 0]
+	  SrcBlock		  "1/Rp"
+	  SrcPort		  1
+	  Points		  [-105, 0]
+	  DstBlock		  "Sum2"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Pin"
+      Ports		      [1]
+      Position		      [795, 460, 885, 490]
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Pout"
+      Ports		      [1]
+      Position		      [795, 355, 885, 385]
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Pout boost"
+      Ports		      [1]
+      Position		      [570, 190, 660, 220]
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Ppv"
+      Ports		      [1]
+      Position		      [295, 405, 385, 435]
+      BackgroundColor	      "green"
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product"
+      Ports		      [2, 1]
+      Position		      [315, 257, 345, 288]
+      InputSameDT	      off
+      OutDataTypeMode	      "Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+      Port {
+	PortNumber		1
+	Name			"Ppv"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Vout (boost) = VDC"
+      Ports		      [1]
+      Position		      [570, 35, 660, 65]
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Vpv"
+      Ports		      [1]
+      Position		      [295, 455, 385, 485]
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "fac_in"
+      Position		      [645, 459, 690, 491]
+      Gain		      "60"
+      ParameterDataTypeMode   "Inherit via internal rule"
+      OutDataTypeMode	      "Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "fac_out"
+      Position		      [640, 354, 685, 386]
+      Gain		      "60"
+      ParameterDataTypeMode   "Inherit via internal rule"
+      OutDataTypeMode	      "Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Line {
+      Name		      "vac"
+      Labels		      [0, 0]
+      SrcBlock		      "DC-AC Inverter"
+      SrcPort		      1
+      DstBlock		      "DC-AC\nscope"
+      DstPort		      1
+    }
+    Line {
+      Name		      "iac"
+      Labels		      [0, 0]
+      SrcBlock		      "DC-AC Inverter"
+      SrcPort		      2
+      DstBlock		      "DC-AC\nscope"
+      DstPort		      2
+    }
+    Line {
+      Name		      "iin"
+      Labels		      [0, 0]
+      SrcBlock		      "DC-AC Inverter"
+      SrcPort		      3
+      Points		      [30, 0]
+      Branch {
+	DstBlock		"DC-AC\nscope"
+	DstPort			3
+      }
+      Branch {
+	Points			[0, -105; -440, 0; 0, 135]
+	DstBlock		"Boost DC-DC"
+	DstPort			2
+      }
+    }
+    Line {
+      Name		      "Duty"
+      Labels		      [0, 0]
+      SrcBlock		      "DC-AC Inverter"
+      SrcPort		      4
+      DstBlock		      "DC-AC\nscope"
+      DstPort		      4
+    }
+    Line {
+      Name		      "pin"
+      Labels		      [0, 0]
+      SrcBlock		      "DC-AC Inverter"
+      SrcPort		      5
+      Points		      [20, 0]
+      Branch {
+	Points			[0, 130; -310, 0; 0, 170]
+	DstBlock		"Integrator(pin)"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Mux"
+	DstPort			1
+      }
+    }
+    Line {
+      Name		      "pout"
+      Labels		      [0, 0]
+      SrcBlock		      "DC-AC Inverter"
+      SrcPort		      6
+      Points		      [35, 0]
+      Branch {
+	Points			[0, 125; -300, 0; 0, 45]
+	DstBlock		"Integrator(pout)"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Mux"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "Integrator(pout)"
+      SrcPort		      1
+      DstBlock		      "fac_out"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Integrator(pin)"
+      SrcPort		      1
+      DstBlock		      "fac_in"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Compute\nefficiency"
+      SrcPort		      1
+      DstBlock		      "DC-AC Efficiency"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "fac_out"
+      SrcPort		      1
+      Points		      [20, 0]
+      Branch {
+	DstBlock		"Pout"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 40]
+	DstBlock		"Compute\nefficiency"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "fac_in"
+      SrcPort		      1
+      Points		      [15, 0]
+      Branch {
+	DstBlock		"Pin"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -50]
+	DstBlock		"Compute\nefficiency"
+	DstPort			2
+      }
+    }
+    Line {
+      Name		      "Vout"
+      Labels		      [0, 0]
+      SrcBlock		      "Boost DC-DC"
+      SrcPort		      1
+      Points		      [20, 0]
+      Branch {
+	Points			[15, 0]
+	Branch {
+	  DstBlock		  "DC-AC Inverter"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, 15]
+	  DstBlock		  "Boost scope"
+	  DstPort		  1
+	}
+      }
+      Branch {
+	Points			[0, -50]
+	DstBlock		"Vout (boost) = VDC"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "PV1"
+      SrcPort		      1
+      DstBlock		      "Add"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "PV2"
+      SrcPort		      1
+      DstBlock		      "Add"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "PV3"
+      SrcPort		      1
+      DstBlock		      "Add"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "PV4"
+      SrcPort		      1
+      DstBlock		      "Add"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "PV5"
+      SrcPort		      1
+      DstBlock		      "Add"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "PV6"
+      SrcPort		      1
+      DstBlock		      "Add"
+      DstPort		      6
+    }
+    Line {
+      Name		      "Vpv"
+      Labels		      [0, 0; 1, 0]
+      SrcBlock		      "Add"
+      SrcPort		      1
+      Points		      [10, 0]
+      Branch {
+	Points			[0, 190]
+	DstBlock		"Vpv"
+	DstPort			1
+      }
+      Branch {
+	Points			[10, 0]
+	Branch {
+	  Labels		  [2, 0]
+	  Points		  [0, -175]
+	  DstBlock		  "Boost DC-DC"
+	  DstPort		  1
+	}
+	Branch {
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "Insolation"
+      SrcPort		      1
+      Points		      [15, 0]
+      Branch {
+	Points			[0, 90]
+	Branch {
+	  Points		  [0, 90]
+	  Branch {
+	    Points		    [0, 90]
+	    Branch {
+	      Points		      [0, 90]
+	      Branch {
+		DstBlock		"PV5"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, 90]
+		DstBlock		"PV6"
+		DstPort			2
+	      }
+	    }
+	    Branch {
+	      DstBlock		      "PV4"
+	      DstPort		      2
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "PV3"
+	    DstPort		    2
+	  }
+	}
+	Branch {
+	  DstBlock		  "PV2"
+	  DstPort		  2
+	}
+      }
+      Branch {
+	DstBlock		"PV1"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "Iref"
+      SrcPort		      1
+      Points		      [-15, 0]
+      DstBlock		      "DC-AC Inverter"
+      DstPort		      2
+    }
+    Line {
+      Name		      "Ppv"
+      Labels		      [0, 0]
+      SrcBlock		      "Product"
+      SrcPort		      1
+      Points		      [15, 0; 0, 50; -85, 0]
+      DstBlock		      "Ppv"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Ipv = Iref"
+      Labels		      [0, 0]
+      SrcBlock		      "PV current"
+      SrcPort		      1
+      Points		      [40, 0]
+      Branch {
+	DstBlock		"Boost DC-DC"
+	DstPort			3
+      }
+      Branch {
+	Points			[0, 40]
+	Branch {
+	  Labels		  [2, 0]
+	  Points		  [0, 335; -320, 0; 0, -75]
+	  Branch {
+	    Points		    [0, -90]
+	    Branch {
+	      Points		      [0, -90]
+	      Branch {
+		Points			[0, -90]
+		Branch {
+		  Points		  [0, -90]
+		  Branch {
+		    Points		    [0, -90]
+		    DstBlock		    "PV1"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "PV2"
+		    DstPort		    1
+		  }
+		}
+		Branch {
+		  DstBlock		  "PV3"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		DstBlock		"PV4"
+		DstPort			1
+	      }
+	    }
+	    Branch {
+	      DstBlock		      "PV5"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "PV6"
+	    DstPort		    1
+	  }
+	}
+	Branch {
+	  Points		  [-95, 0]
+	  DstBlock		  "Product"
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      Name		      "Duty"
+      Labels		      [0, 0]
+      SrcBlock		      "Boost DC-DC"
+      SrcPort		      2
+      DstBlock		      "Boost scope"
+      DstPort		      2
+    }
+    Line {
+      Name		      "efficiency"
+      Labels		      [0, 0]
+      SrcBlock		      "Boost DC-DC"
+      SrcPort		      3
+      Points		      [20, 0]
+      Branch {
+	Points			[0, -15]
+	DstBlock		"Boost scope"
+	DstPort			3
+      }
+      Branch {
+	Points			[0, 85]
+	DstBlock		"Boost efficiency"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Boost DC-DC"
+      SrcPort		      4
+      DstBlock		      "Pout boost"
+      DstPort		      1
+    }
+    Line {
+      Name		      "pin, pout"
+      Labels		      [0, 0]
+      SrcBlock		      "Mux"
+      SrcPort		      1
+      Points		      [0, -15]
+      DstBlock		      "DC-AC\nscope"
+      DstPort		      5
+    }
+    Annotation {
+      Name		      "ECEN2060\nPV + Boost DC-DC + DC-AC inverter ave"
+"raged model"
+      Position		      [547, 555]
+      BackgroundColor	      "yellow"
+      UseDisplayTextAsClickCallback off
+    }
+    Annotation {
+      Name		      "ECEN2060\n6-module PV Array"
+      Position		      [154, 25]
+      UseDisplayTextAsClickCallback off
+    }
+    Annotation {
+      Name		      "Average output AC power"
+      Position		      [843, 346]
+      BackgroundColor	      "cyan"
+      UseDisplayTextAsClickCallback off
+    }
+    Annotation {
+      Name		      "Average input AC power"
+      Position		      [845, 514]
+      BackgroundColor	      "cyan"
+      UseDisplayTextAsClickCallback off
+    }
+    Annotation {
+      Name		      "DC-AC average power\nand efficiency"
+      Position		      [612, 426]
+      BackgroundColor	      "cyan"
+      UseDisplayTextAsClickCallback off
+    }
+    Annotation {
+      Name		      "Set Boost Iref to\noperate PV array\nat MPP"
+      Position		      [336, 167]
+      ForegroundColor	      "blue"
+      BackgroundColor	      "cyan"
+      UseDisplayTextAsClickCallback off
+    }
+    Annotation {
+      Name		      "Set DC-AC Iref \nto balance \nthe power, i,e \n"
+"to keep VDC\nconstant"
+      Position		      [766, 267]
+      ForegroundColor	      "blue"
+      BackgroundColor	      "cyan"
+      UseDisplayTextAsClickCallback off
+    }
+    Annotation {
+      Name		      "PV output power"
+      Position		      [340, 396]
+      UseDisplayTextAsClickCallback off
+    }
+  }
+}

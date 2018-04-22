@@ -1,0 +1,31 @@
+The whole idea of Code Simplicity:
+
+Software design now is indispensable in all engineering fields, research and development to say the least. You are not complete unless you develop this important competency.
+
+To borrow a page from Google policies in software design:
+
+The Equation of Software Design:
+
+D = (Vn x Vf ) / (Ei x Em)
+where:
+D  Stands for the desirability of the change.
+Vn  Stands for value now.
+Vf  Stands for future value.
+Ei  Stands for the effort of implementation.
+Em  Stands for the effort of maintenance.
+
+As time goes on, this equation reduces to:
+D = (Vf ) / (Em)
+Which demonstrates that it is more important to reduce the effort of maintenance than it is to reduce the effort of implementation.
+
+The laws of Software design:
+
+1. The purpose of software is to help people.
+2. The Law of Change: The longer your program exists, the more probable it is that any piece of it will have to change.
+3. The Law of Defect Probability: The chance of introducing a defect into your program is proportional to the size of the changes you make to it.
+4. The Law of Simplicity: The ease of maintenance of any piece of software is proportional to the simplicity of its individual pieces.
+5. The Law of Testing: The degree to which you know how your software behaves is the degree to which you have accurately tested it.
+
+If you wanted to sum up the most important facts to keep in mind about software design in two simple sentences, they would be:
+• It is more important to reduce the effort of maintenance than it is to reduce the effort of implementation.
+• The effort of maintenance is proportional to the complexity of the system.
